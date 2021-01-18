@@ -39,8 +39,7 @@ function PostsList() {
 
   return (
     <div>
-      <h1>All Blog Posts</h1>
-      <h3 className="mb-5 mt-5">Click on a post to view</h3>
+      <h1>All Posts</h1>
       {state.posts.length ? (
         <List>
           {state.posts.map(post => (
@@ -48,18 +47,16 @@ function PostsList() {
               <Link to={"/posts/" + post._id}>
                 <strong>
                   {post.title} by {post.author}
-                </strong>
+                </strong>                
               </Link>
-              <DeleteBtn onClick={() => removePost(post._id)} />
+              <p> {post.body} </p>
+              {/* <DeleteBtn onClick={() => removePost(post._id)} /> */}
             </ListItem>
           ))}
         </List>
       ) : (
-        <h3>You haven't added any posts yet!</h3>
+        <h3>No posts</h3>
       )}
-      <div className="mt-5">
-        <Link to="favorites">View favorites</Link>
-      </div>
     </div>
   );
 }
