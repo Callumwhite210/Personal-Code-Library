@@ -13,12 +13,18 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+//mongodb+srv://Disgaea210:Disgaea210@homeworkcluster.obj1e.mongodb.net/<dbname>?retryWrites=true&w=majority
 // Add routes, both API and view
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactCodeBase");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/codelibrary",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 // Start the API server
 app.listen(PORT, function() {
