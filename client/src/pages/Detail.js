@@ -33,20 +33,13 @@ const Detail = props => {
     <>{state.currentPost ? (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {state.currentPost.title} by {state.currentPost.author}
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
           <Col size="md-10 md-offset-1">
+          <Jumbotron>
             <article>
-              <h1>Content:</h1>
+              <h2>{state.currentPost.title} by {state.currentPost.author}</h2>
               <p>{state.currentPost.body}</p>
             </article>
+          </Jumbotron>
           </Col>
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
             <button className="btn btn-danger" onClick={removeFavorite}>

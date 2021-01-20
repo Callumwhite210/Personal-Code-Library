@@ -37,6 +37,7 @@ const FavoritesList = () => {
                   {post.title} by {post.author}
                 </strong>
               </Link>
+              <p> {post.body} </p>
               <DeleteBtn onClick={() => removeFromFavorites(post._id)} />
             </ListItem>
           ))}

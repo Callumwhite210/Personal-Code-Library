@@ -20,10 +20,11 @@ function NavigationBar() {
                 <Link className="nav-link" to="/home">Home</Link>
                 <Link className="nav-link" to="/favorites">Favorites</Link>
                 <Link className="nav-link" to="/create">Creat Post</Link>
+                <Link className="nav-link" to="/login"> Log In </Link>
+                <Link className="nav-link" to="/register"> Register </Link>
               </Nav>
             </Navbar.Collapse>
       </Navbar>
-      {store.loading ? <a className="navbar-brand ml-auto">Loading...</a> : <></>}
     </nav>
   );
 }

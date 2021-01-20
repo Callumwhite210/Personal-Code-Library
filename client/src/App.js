@@ -8,6 +8,8 @@ import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 import Create from './pages/Create'
 import './App.css';
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 function App() {
   return (
     <Router>
@@ -20,6 +22,8 @@ function App() {
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route exact path="/create" component={Create} />
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Register}/>
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>
