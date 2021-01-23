@@ -20,6 +20,8 @@ function NavigationBar() {
                 <Link className="nav-link" to="/home">Home</Link>
                 <Link className="nav-link" to="/favorites">Favorites</Link>
                 <Link className="nav-link" to="/create">Creat Post</Link>
+              </Nav>
+              <Nav className="ml-auto">
                 <Link className="nav-link" to="/login"> Log In </Link>
                 <Link className="nav-link" to="/register"> Register </Link>
               </Nav>
