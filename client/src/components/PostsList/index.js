@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
+import { useState } from 'react';
 
 function PostsList() {
   const [state, dispatch] = useStoreContext();
@@ -50,7 +51,7 @@ function PostsList() {
                 </strong>                
               </Link>
               <p> {post.body} </p>
-              {/* <DeleteBtn onClick={() => removePost(post._id)} /> */}
+               <DeleteBtn onClick={() => removePost(post._id)} />
             </ListItem>
           ))}
         </List>

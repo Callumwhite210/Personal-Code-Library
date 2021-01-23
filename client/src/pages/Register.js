@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import PostsList from "../components/PostsList";
+import RegisterForm from '../components/RegisterForm/RegisterForm.js';
+
 
 const Register = () => {
   return (
@@ -10,6 +11,7 @@ const Register = () => {
           <h1> Register </h1>
         </Col>
       </Row>
+      <RegisterForm />
     </Container>
   );
 };

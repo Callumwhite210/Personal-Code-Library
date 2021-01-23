@@ -24,8 +24,11 @@ function NavigationBar() {
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/login"> Log In </Link>
                 <Link className="nav-link" to="/register"> Register </Link>
-              </Nav>
+              </Nav>             
             </Navbar.Collapse>
+            <div>
+              <input type='text' placeholder='Search'/>
+            </div>
       </Navbar>
     </nav>
   );
