@@ -1,5 +1,8 @@
 import React from 'react';
 import { Col, Row, Container } from "../Grid/index";
+import LoginButton from '../LoginButton/LoginButton';
+import LogOutButton from '../LogOut/LogOutButton';
+import Profile from '../Profile/Profile';
 function LoginForm() {
 
     return (
@@ -11,7 +14,9 @@ function LoginForm() {
             <input type='text' placeholder='Password' />
             </Row>
             <Row>
-            <button>Login</button>
+            <LoginButton />
+            <LogOutButton />
+            <Profile />
             </Row>           
         </div>
     )

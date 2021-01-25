@@ -3,6 +3,8 @@ import { useStoreContext } from "../../utils/GlobalState";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import LoginButton from "../LoginButton/LoginButton";
+import LogOutButton from "../LogOut/LogOutButton";
 
 
 function NavigationBar() {
@@ -22,8 +24,8 @@ function NavigationBar() {
                 <Link className="nav-link" to="/create">Creat Post</Link>
               </Nav>
               <Nav className="ml-auto">
-                <Link className="nav-link" to="/login"> Log In </Link>
-                <Link className="nav-link" to="/register"> Register </Link>
+                <LoginButton />
+                <LogOutButton />
               </Nav>             
             </Navbar.Collapse>
             <div>
