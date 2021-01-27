@@ -6,6 +6,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import { useState } from 'react';
+import Profile from '../Profile/Profile';
 
 function PostsList() {
   const [state, dispatch] = useStoreContext();
@@ -40,7 +41,7 @@ function PostsList() {
 
   return (
     <div>
-      <h1>All Posts</h1>
+      <h1></h1>
       {state.posts.length ? (
         <List>
           {state.posts.map(post => (
@@ -56,7 +57,7 @@ function PostsList() {
           ))}
         </List>
       ) : (
-        <h3>No posts</h3>
+        <Profile />
       )}
     </div>
   );

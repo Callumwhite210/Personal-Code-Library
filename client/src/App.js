@@ -8,9 +8,6 @@ import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 import Create from './pages/Create'
 import './App.css';
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import LoginButton from "./components/LoginButton/LoginButton";
 function App() {
   return (
     <Router>
