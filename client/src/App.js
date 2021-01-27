@@ -8,6 +8,7 @@ import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 import Create from './pages/Create'
 import './App.css';
+import ProtectedRoute from "./Auth/ProtectedRoute";
 function App() {
   return (
     <Router>
@@ -17,9 +18,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/favorites" component={FavoritesList} />
+            <ProtectedRoute exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
-            <Route exact path="/create" component={Create} />
+            <ProtectedRoute exact path="/create" component={Create} />
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>

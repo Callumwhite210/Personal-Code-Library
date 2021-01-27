@@ -43,10 +43,10 @@ const FavoritesList = () => {
           ))}
         </List>
       ) : (
-        <h3>You haven't added any favorites yet!</h3>
+        <h3>No favorites Found</h3>
       )}
       <div className="mt-5">
-        <Link to="home">Back to home</Link>
+        <Link to="home">Back to Posts</Link>
       </div>
     </div>
   );

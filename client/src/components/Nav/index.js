@@ -3,9 +3,8 @@ import { useStoreContext } from "../../utils/GlobalState";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import LoginButton from "../LoginButton/LoginButton";
-import LogOutButton from "../LogOut/LogOutButton";
 import AuthNav from "../AuthNav/AuthNav";
+import { Form , FormControl , Button } from 'react-bootstrap';
 
 
 function NavigationBar() {
@@ -16,7 +15,7 @@ function NavigationBar() {
       <a className="navbar-brand" href="/">
         Personal Code Library
       </a>
-      <Navbar bg="transparant">
+      <Navbar bg="dark" variant="dark">
       <Navbar.Toggle className="border-0 dropdown navbar-dark" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
@@ -24,13 +23,14 @@ function NavigationBar() {
                 <Link className="nav-link" to="/favorites">Favorites</Link>
                 <Link className="nav-link" to="/create">Creat Post</Link>          
               </Nav>
-              <Nav className="ml-auto">
+                <Form inline>
+                  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                  <Button variant="light">Search</Button>
+                </Form>
+                <Nav className="ml-auto">
                 <AuthNav />
-              </Nav>             
+              </Nav>           
             </Navbar.Collapse>
-            <div>
-              <input type='text' placeholder='Search'/>
-            </div>
       </Navbar>
     </nav>
   );
