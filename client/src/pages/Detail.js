@@ -5,6 +5,8 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
+import { Card } from "react-bootstrap";
+import { Button } from 'react-bootstrap';
 
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
@@ -33,22 +35,22 @@ const Detail = props => {
     <>{state.currentPost ? (
       <Container fluid>
         <Row>
-          <Col size="md-10 md-offset-1">
-          <Jumbotron>
+          <Col size="md-10">
+          <Card style={{ margin: 10 }}>
             <article>
               <h2>{state.currentPost.title} by {state.currentPost.author}</h2>
               <p>{state.currentPost.body}</p>
             </article>
-          </Jumbotron>
+          </Card>
           </Col>
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
-            <button className="btn btn-danger" onClick={removeFavorite}>
+            <Button className="btn btn-danger" onClick={removeFavorite}>
                 Remove from Favorites!
-            </button>
+            </Button>
           ) : (
-            <button className="btn" onClick={addFavorite}>
+            <Button className="btn" onClick={addFavorite}>
                Add to Favorites
-            </button>
+            </Button>
           )}
         </Row>
         <Row>

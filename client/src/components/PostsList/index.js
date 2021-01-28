@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import { ListItem, List } from "../List";
+import { ListItem } from "../List";
 import DeleteBtn from "../DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import { useState } from 'react';
-import Profile from '../Profile/Profile';
+import { Card, Container, Row } from "react-bootstrap";
+import { Form , FormControl , Button } from 'react-bootstrap';
+
 
 function PostsList() {
   const [state, dispatch] = useStoreContext();
@@ -41,23 +43,28 @@ function PostsList() {
 
   return (
     <div>
-      <h1></h1>
+      <Form inline style={{ margin: 15 }}>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
+      </Form>
       {state.posts.length ? (
-        <List>
+        <Container fluid>
+        <Card style={{ margin: 15, color: '#5F918E' }}>
           {state.posts.map(post => (
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
-                <strong>
-                  {post.title} by {post.author}
-                </strong>                
+                <h5>
+                  {post.title} by User {post.author}
+                </h5>                
               </Link>
               <p> {post.body} </p>
                <DeleteBtn onClick={() => removePost(post._id)} />
             </ListItem>
           ))}
-        </List>
+        </Card>
+        </Container>
+        
       ) : (
-        <Profile />
+        <h1> Currently no Posts </h1>
       )}
     </div>
   );

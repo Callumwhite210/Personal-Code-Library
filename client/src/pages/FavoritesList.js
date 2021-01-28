@@ -4,6 +4,7 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
+import { Card } from "react-bootstrap";
 
 const FavoritesList = () => {
   const [state, dispatch] = useStoreContext();
@@ -26,22 +27,21 @@ const FavoritesList = () => {
 
   return (
     <div className="container mb-5 mt-5">
-      <h1 className="text-center">Here's All of Your Favorite Posts</h1>
+      <h1 className="text-center">Favorited Posts</h1>
       {state.favorites.length ? (
-        <List>
-          <h3 className="mb-5 mt-5">Click on a post to view in detail</h3>
+        <Card className='post-card'>
           {state.favorites.map(post => (
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
-                <strong>
-                  {post.title} by {post.author}
-                </strong>
+                <h5>
+                  {post.title} by User {post.author}
+                </h5>
               </Link>
               <p> {post.body} </p>
               <DeleteBtn onClick={() => removeFromFavorites(post._id)} />
             </ListItem>
           ))}
-        </List>
+        </Card>
       ) : (
         <h3>No favorites Found</h3>
       )}
