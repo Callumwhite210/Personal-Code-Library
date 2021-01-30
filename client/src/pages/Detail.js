@@ -36,7 +36,7 @@ const Detail = props => {
       <Container fluid>
         <Row>
           <Col size="md-10">
-          <Card style={{ margin: 10 }}>
+          <Card style={{ margin: 15 }}>
             <article>
               <h2>{state.currentPost.title} by {state.currentPost.author}</h2>
               <p>{state.currentPost.body}</p>

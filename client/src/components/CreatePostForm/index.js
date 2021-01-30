@@ -39,10 +39,10 @@ function CreatePostForm() {
         <input className="form-control mb-5" required ref={titleRef} placeholder="Title" />
         <textarea className="form-control mb-5" required ref={bodyRef} placeholder="Body" />
         <input className="form-control mb-5" ref={authorRef} placeholder="Screen name"/>
-      </form>
-      <Button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
+        <Button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
         Post!
-      </Button>
+        </Button>
+      </form>
     </Container>
   );
 }

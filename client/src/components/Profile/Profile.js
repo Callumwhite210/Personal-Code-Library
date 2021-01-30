@@ -6,15 +6,8 @@ const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
     return (
         isAuthenticated && (
-    <Row>
-        <Col>
-            <h5 style={{color: '#ffff' }}>{user.name}</h5>
-        </Col>
-         
-        <Col>
-            <Image src={user.picture} alt={user.name} roundedCircle style={{ height: 50, width: 50}}/>
-        </Col>  
-    </Row>   
+ 
+        <Image src={user.picture} alt={user.name} roundedCircle style={{ height: 50, width: 50}}/>  
     ))
 }
 
