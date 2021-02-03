@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
-import { ListItem, List } from "../components/List";
+import { ListItem } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
 import { Card } from "react-bootstrap";
+
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+
+SyntaxHighlighter.registerLanguage('javascript', js)
 
 const FavoritesList = () => {
   const [state, dispatch] = useStoreContext();
@@ -29,15 +34,15 @@ const FavoritesList = () => {
     <div className="container mb-5 mt-5">
       <h1 className="text-center">Favorited Posts</h1>
       {state.favorites.length ? (
-        <Card className='post-card'>
+        <Card>
           {state.favorites.map(post => (
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
-                <h5>
+                <h5 className='post-card'>
                   {post.title} by User {post.author}
                 </h5>
               </Link>
-              <p> {post.body} </p>
+              <SyntaxHighlighter>{post.body}</SyntaxHighlighter>
               <DeleteBtn onClick={() => removeFromFavorites(post._id)} />
             </ListItem>
           ))}

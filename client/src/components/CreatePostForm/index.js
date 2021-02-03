@@ -2,9 +2,8 @@ import React, { useRef } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
-import { Button, Container, Form, Row } from 'react-bootstrap';
-import { Link } from "react-router-dom";
-import Userinfo from "../Userinfo/Userinfo";
+import { Button, Container } from 'react-bootstrap';
+
 
 function CreatePostForm() {
   const titleRef = useRef();
@@ -34,14 +33,14 @@ function CreatePostForm() {
 
   return (
     <Container fluid>
-      <h1>Create a post</h1>
-      <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <input className="form-control mb-5" required ref={titleRef} placeholder="Title" />
-        <textarea className="form-control mb-5" required ref={bodyRef} placeholder="Body" />
-        <input className="form-control mb-5" ref={authorRef} placeholder="Screen name"/>
+      <h1 className='post-card'>Create a post</h1>
+      <form className="form-group mt-3 mb-2" onSubmit={handleSubmit}>
+        <input className="form-control mb-2" required ref={titleRef} placeholder="Post title" />
+        <textarea className="form-control mb-2" required ref={bodyRef} style={{ height: 300 }} placeholder="Code"/>
+        <input className="form-control mb-2" ref={authorRef} placeholder="User Name"/>   
         <Button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
-        Post!
-        </Button>
+          Post!
+        </Button>                         
       </form>
     </Container>
   );

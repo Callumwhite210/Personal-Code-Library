@@ -26,7 +26,7 @@ function NavigationBar() {
                 <Link className="nav-link" to="/create">Creat Post</Link>          
               </Nav>
                 <Nav className="ml-auto">
-                <AuthNav />
+                <AuthNav style={{ marginRight: 10}}/>
               </Nav>          
             </Navbar.Collapse>
       

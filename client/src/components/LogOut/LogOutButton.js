@@ -5,7 +5,7 @@ const LogOutButton = () => {
     const { logout } = useAuth0();
     return (
         <Button variant="light" onClick={() => logout()}>
-            logout
+            Log out
         </Button>
     )
 }
