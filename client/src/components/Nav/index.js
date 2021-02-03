@@ -14,24 +14,21 @@ function NavigationBar() {
 
   return (
     <Container className="p-0"fluid={true}>
-      <Navbar bg="dark" variant="dark">
-      <a className="navbar-brand" href="/">
-        Personal Code Library
-      </a>
-      <Navbar.Toggle className="border-0 dropdown" aria-controls="navbar-toggle"/>
-            <Navbar.Collapse id="navbar-toggle">
+      <Navbar collapseOnSelect bg="dark" variant="dark" expand='lg'>
+      <Navbar.Brand className="navbar-brand" href="/">Personal Code Library</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+            <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Link className="nav-link" to="/home">Home</Link>
+                <Nav.Link className="nav-link" href="/home">Home</Nav.Link>
                 <Link className="nav-link" to="/favorites">Favorites</Link>
-                <Link className="nav-link" to="/create">Creat Post</Link>          
+                <Nav.Link className="nav-link" href="/create">Creat Post</Nav.Link>          
               </Nav>
                 <Nav className="ml-auto">
-                <AuthNav style={{ marginRight: 10}}/>
+                <AuthNav/>
               </Nav>          
             </Navbar.Collapse>
-      
-      <Profile />
-    </Navbar>
+        <Profile />
+      </Navbar>
     </Container>
   );
 }

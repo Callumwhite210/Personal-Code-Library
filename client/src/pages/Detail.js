@@ -41,12 +41,17 @@ const Detail = props => {
         <Row>
           <Col size="md-10">
           <Card style={{ margin: 15}}>
-            <Card.Text>
+              <Card.Title style={{margin: 10}}>
               <h3 className="post-card">{state.currentPost.title}</h3><h4 className="post-card"> by {state.currentPost.author}</h4>
-              <SyntaxHighlighter>{state.currentPost.body}</SyntaxHighlighter>
-            </Card.Text>
+              </Card.Title>
+              <Card.Body>
+              <SyntaxHighlighter>
+                {state.currentPost.body}
+              </SyntaxHighlighter>
+            </Card.Body>
           </Card>
-          </Col>
+         </Col>
+
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
             <Button variant="danger" size="sm" className="btn" onClick={removeFavorite}>
                 Remove from Favorites!
@@ -56,10 +61,11 @@ const Detail = props => {
                Add to Favorites
             </Button>
           )}
+
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Posts</Link>
+            <Link to="/"> Back to Posts</Link>
           </Col>
         </Row>
       </Container>

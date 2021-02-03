@@ -37,7 +37,7 @@ function CreatePostForm() {
       <form className="form-group mt-3 mb-2" onSubmit={handleSubmit}>
         <input className="form-control mb-2" required ref={titleRef} placeholder="Post title" />
         <textarea className="form-control mb-2" required ref={bodyRef} style={{ height: 300 }} placeholder="Code"/>
-        <input className="form-control mb-2" ref={authorRef} placeholder="User Name"/>   
+        <input className="form-control mb-2" required ref={authorRef} placeholder="User Name"/>   
         <Button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
           Post!
         </Button>                         

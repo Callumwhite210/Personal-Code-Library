@@ -4,12 +4,8 @@ import PostsList from "../components/PostsList";
 
 const Home = () => {
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-6 sm-12">
-          <PostsList />
-        </Col>
-      </Row>
+    <Container>   
+      <PostsList />          
     </Container>
   );
 };

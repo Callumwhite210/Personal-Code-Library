@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { ListItem } from "../List";
+import { List, ListItem } from "../List";
 import DeleteBtn from "../DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import { useState } from 'react';
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
@@ -46,13 +46,15 @@ function PostsList() {
   }, []);
 
   return (
-    <div className="container mb-5 mt-5" style={{justifyContent: "center", alignItems: "center"}}>
+    <div>
+      <h1 className="text-center post-card">Posts</h1>
       {state.posts.length ? (
-        <Card style={{ margin: 15 }}>
+        <Card className='justify-content-md-center' style={{ marginTop: 1 }}>
           {state.posts.map(post => (
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
-                <h4> {post.title} </h4> <h5> by User {post.author} </h5>                             
+                <h4>{post.title}</h4> 
+                <h6>by User {post.author}</h6>                                                                   
               </Link>
               <SyntaxHighlighter>{post.body}</SyntaxHighlighter>
                <DeleteBtn onClick={() => removePost(post._id)} />
