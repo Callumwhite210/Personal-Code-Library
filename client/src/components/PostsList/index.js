@@ -54,10 +54,10 @@ function PostsList() {
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
                 <h4>{post.title}</h4> 
-                <h6>by User {post.author}</h6>                                                                   
+                <h6>by {post.author}</h6>                                                                   
               </Link>
               <SyntaxHighlighter>{post.body}</SyntaxHighlighter>
-               <DeleteBtn onClick={() => removePost(post._id)} />
+               
             </ListItem>
           ))}
         </Card>

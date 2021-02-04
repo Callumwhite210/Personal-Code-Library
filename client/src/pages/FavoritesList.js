@@ -39,7 +39,7 @@ const FavoritesList = () => {
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
                 <h5 className='post-card'>
-                  {post.title} by User {post.author}
+                  {post.title} by {post.author}
                 </h5>
               </Link>
               <SyntaxHighlighter>{post.body}</SyntaxHighlighter>
