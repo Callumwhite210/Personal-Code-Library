@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { List, ListItem } from "../List";
-import DeleteBtn from "../DeleteBtn";
+import { ListItem } from "../List";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
-import { useState } from 'react';
-import { Card, Container } from "react-bootstrap";
+
+import { Card } from "react-bootstrap";
 
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
