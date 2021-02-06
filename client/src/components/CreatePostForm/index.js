@@ -30,7 +30,7 @@ function CreatePostForm() {
     titleRef.current.value = "";
     bodyRef.current.value = "";
   };
-
+  //Creat post form takes data that send it to API
   return (
     <Container fluid>
       <h1 className='post-card'>Create a post</h1>

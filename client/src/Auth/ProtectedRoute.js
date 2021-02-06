@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 
-
+//Makes users sign into Auth0 before procceeding 
 const ProtectedRoute = ({ component, ...args }) => (
   <Route
     component={withAuthenticationRequired(component, {
