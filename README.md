@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ## Description 
 
 A personal library for users to log in to their personal account and have access to resource and users posts in a forum or dashboard format. 
 The user can also search the database for post Titles, Tags or Users to help navigate around the web app. Users can also give likes and dislikes 
 to other users code to assist in sorting the most useful information.
+=======
+ ## Description 
+A personal library for users to log in to their personal account and have access to resource and users posts in a forum or dashboard format.
+>>>>>>> 23555206cfa9eea53fe31bcb51591f0303469b86
 
 ## Images
 ![GitHub demo image](/images/Demo1.png)
