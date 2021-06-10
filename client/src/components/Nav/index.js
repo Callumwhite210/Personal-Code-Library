@@ -1,7 +1,7 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'
+import Nav from 'react-bootstrap/Nav';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import AuthNav from "../AuthNav/AuthNav";
 import Profile from '../Profile/Profile';

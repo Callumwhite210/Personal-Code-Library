@@ -51,7 +51,7 @@ const Detail = props => {
             </Card.Body>
           </Card>
          </Col>
-
+              {/* create is authenticated state for buttons */}
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
             <Button variant="danger" size="sm" className="btn" onClick={removeFavorite}>
                 Remove from Favorites!
@@ -61,7 +61,6 @@ const Detail = props => {
                Add to Favorites
             </Button>
           )}
-
         </Row>
         <Row>
           <Col size="md-2">
